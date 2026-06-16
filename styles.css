@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+}
+
+/* Page Layout for Preview */
+.a4-page {
+    width: 210mm;
+    height: 296mm;
+    background: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 15mm 15mm; /* Dynamic spacing padding */
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ornate Gold Border */
+.ornate-border-container {
+    position: absolute;
+    top: 10mm;
+    left: 10mm;
+    right: 10mm;
+    bottom: 10mm;
+    border: 1px solid #c5a059;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.ornate-border-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid #c5a059;
+    box-sizing: border-box;
+}
+
+/* Corner Ornaments */
+.corner-ornament {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    color: #c5a059;
+}
+
+.corner-top-left {
+    top: -2px;
+    left: -2px;
+}
+
+.corner-top-right {
+    top: -2px;
+    right: -2px;
+    transform: scaleX(-1);
+}
+
+.corner-bottom-left {
+    bottom: -2px;
+    left: -2px;
+    transform: scaleY(-1);
+}
+
+.corner-bottom-right {
+    bottom: -2px;
+    right: -2px;
+    transform: scale(-1);
+}
+
+/* Center Ornaments */
+.center-ornament-top {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 15px;
+    color: #c5a059;
+}
+
+.center-ornament-bottom {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1);
+    width: 120px;
+    height: 15px;
+    color: #c5a059;
+}
+
+/* Invoice Fonts */
+.font-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #1d2d50;
+}
+
+.font-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/* Table styling matching the PDF */
+.invoice-table th {
+    background-color: #fbf8f3;
+    color: #1e293b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.invoice-table td {
+    color: #334155;
+}
+
+.subtotal-row {
+    background-color: #fbf8f3;
+    font-weight: 600;
+    color: #1e293b;
+    border-top: 1px solid #c5a059;
+    border-bottom: 1px solid #c5a059;
+}
+
+/* Custom Scrollbar for Form */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Print Stylesheet */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    body {
+        background-color: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .a4-page {
+        width: 210mm !important;
+        height: 296mm !important;
+        margin: 0 !important;
+        padding: 15mm 15mm !important;
+        border: none !important;
+        box-shadow: none !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        page-break-after: avoid;
+        page-break-before: avoid;
+        box-sizing: border-box !important;
+    }
+}
